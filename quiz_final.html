@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>09/20 VKSDA 학생반 천로역정 퀴즈 1 (객관식 10문항)</title>
+<style>
+  :root {
+    --bg:#f9fafb; --card:#ffffff; --ink:#0f172a; --muted:#475569;
+    --accent:#2563eb; --ok:#16a34a; --bad:#dc2626;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family: system-ui, -apple-system, "Apple SD Gothic Neo",
+    "Noto Sans KR", Segoe UI, Roboto, Helvetica, Arial, "Malgun Gothic", sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.55;
+  }
+  header{
+    position:sticky; top:0; z-index:10; background:linear-gradient(180deg,#fff,rgba(255,255,255,0.85));
+    backdrop-filter: blur(8px); border-bottom:1px solid #e5e7eb;
+  }
+  .wrap{max-width:860px; margin:0 auto; padding:12px 16px;}
+  h1{font-size:1.25rem; margin:8px 0 2px}
+  .tiny{font-size:0.88rem; color:var(--muted)}
+  .pill{display:inline-block; padding:2px 8px; border-radius:999px; background:#eef2ff; color:#1e3a8a; font-weight:700; font-size:0.8rem}
+  .card{
+    background:var(--card); border:1px solid #e5e7eb; border-radius:16px; padding:16px; margin:12px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+  fieldset{border:none; padding:0; margin:0}
+  legend{font-weight:700; margin-bottom:8px; font-size:1.02rem}
+  .options{display:grid; gap:10px; margin-top:8px}
+  .opt{
+    display:flex; gap:10px; align-items:flex-start; padding:10px 12px; border:1px solid #e5e7eb; border-radius:12px;
+    background:#fff; cursor:pointer;
+  }
+  .opt input{transform:scale(1.2); margin-top:2px}
+  .controls{display:flex; flex-wrap:wrap; gap:10px; margin:16px 0}
+  button{
+    appearance:none; border:none; padding:12px 16px; border-radius:12px; font-weight:700; cursor:pointer;
+  }
+  .primary{background:var(--accent); color:#fff}
+  .soft{background:#f1f5f9; color:#0f172a}
+  .feedback{margin-top:10px; padding:10px 12px; border-radius:10px; border:1px solid #e5e7eb; background:#f8fafc}
+  .feedback.ok{border-color:#bbf7d0; background:#f0fdf4}
+  .feedback.bad{border-color:#fecaca; background:#fff1f2}
+  .oktxt{color:var(--ok); font-weight:800}
+  .badtxt{color:var(--bad); font-weight:800}
+  .score{
+    font-weight:800; font-size:1.05rem; padding:10px 12px; border-radius:10px;
+    background:#ecfeff; border:1px solid #a5f3fc; margin:12px 0;
+  }
+  .row{display:grid; gap:8px}
+  label.inline{font-weight:600}
+  input[type="text"]{
+    width:100%; padding:12px 14px; border-radius:12px; border:1px solid #e5e7eb; background:#fff; font-size:1rem;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>천로역정 퀴즈 1 <span class="pill">객관식 10문항</span></h1>
+      <div class="tiny">닉네임 입력 → 제출 시 총점 표시 · 로컬 저장</div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <form id="quiz" novalidate>
+      <!-- 닉네임 -->
+      <section class="card">
+        <div class="row">
+          <label class="inline" for="nick">닉네임</label>
+          <input type="text" id="nick" name="nick" autocomplete="name" />
+          <div class="tiny">※ 닉네임은 점수와 함께 표시됩니다.</div>
+        </div>
+      </section>
+
+      <!-- Q1 -->
+      <section class="card" data-q="1" data-type="mc" data-answer="B">
+        <fieldset>
+          <legend>1) 처음 꿈의 남자는 손에 무엇을 들고, 등에 무엇을 지고 있었나요?</legend>
+          <div class="options" role="group" aria-label="Q1 선택지">
+            <label class="opt"><input type="radio" name="q1" value="A" /> A. 칼 / 보따리</label>
+            <label class="opt"><input type="radio" name="q1" value="B" /> B. 책 / 무거운 짐</label>
+            <label class="opt"><input type="radio" name="q1" value="C" /> C. 지도 / 가벼운 가방</label>
+            <label class="opt"><input type="radio" name="q1" value="D" /> D. 횃불 / 사다리</label>
+          </div>
+          <div class="feedback" aria-live="polite"></div>
+        </fieldset>
+      </section>
+
+      <!-- Q2 -->
+      <section class="card" data-q="2" data-type="mc" data-answer="A">
+        <fieldset>
+          <legend>2) 그가 “난 어쩌면 좋아?”라고 통곡한 직접적 이유는?</legend>
+          <div class="options" role="group" aria-label="Q2 선택지">
+            <label class="opt"><input type="radio" name="q2" value="A" /> A. 책을 읽고 사형 선고와 심판을 깨달았기 때문</label>
+            <label class="opt"><input type="radio" name="q2" value="B" /> B. 가족이 이사를 가자고 해서</label>
+            <label class="opt"><input type="radio" name="q2" value="C" /> C. 직장을 잃을까 봐</label>
+            <label class="opt"><input type="radio" name="q2" value="D" /> D. 비가 많이 와서</label>
+          </div>
+          <div class="feedback" aria-live="polite"></div>
+        </fieldset>
+      </section>
+
+      <!-- Q3 -->
+      <section class="card" data-q="3" data-type="mc" data-answer="C">
+        <fieldset>
+          <legend>3) 가족들의 비웃음과 꾸짖음 속에서 그는 혼자 방에 들어가 무엇을 했나요?</legend>
+          <div class="options" role="group" aria-label="Q3 선택지">
+            <label class="opt"><input type="radio" name="q3" value="A" /> A. 잠을 잤다</label>
+            <label class="opt"><input type="radio" name="q3" value="B" /> B. 음식을 먹었다</label>
+            <label class="opt"><input type="radio" name="q3" value="C" /> C. 가족을 위해 기도하고 자신의 심정을 슬퍼했다</label>
+            <label class="opt"><input type="radio" name="q3" value="D" /> D. 즉시 도망쳤다</label>
+          </div>
+          <div class="feedback" aria-live="polite"></div>
+        </fieldset>
+      </section>
+
+      <!-- Q4 -->
+      <section class="card" data-q="4" data-type="mc" data-answer="B">
+        <fieldset>
+          <legend>4) 전도사가 준 양가죽 족자에 적힌 문구는?</legend>
+          <div class="options" role="group" aria-label="Q4 선택지">
+            <label class="opt"><input type="radio" name="q4" value="A" /> A. 회개하라 천국이 가까이 왔느니라</label>
+            <label class="opt"><input type="radio" name="q4" value="B" /> B. 장차 올 천벌을 피해 도망가라</label>
+            <label class="opt"><input type="radio" name="q4" value="C" /> C. 빛을 따라가면 생명을 얻으리라</label>
+            <label class="opt"><input type="radio" name="q4" value="D" /> D. 문을 두드리라 그리하면 열릴 것이다</label>
+          </div>
+          <div class="feedback" aria-live="polite"></div>
+        </fieldset>
+      </section>
+
+      <!-- Q5 -->
+      <section class="card" data-q="5" data-type="mc" data-answer="B">
+        <fieldset>
+          <legend>5) 전도사의 길 안내로 옳은 조합은?</legend>
+          <div class="options" role="group" aria-label="Q5 선택지">
+            <label class="opt"><input type="radio" name="q5" value="A" /> A. 횃불을 바라보면 넓은 길이 보인다</label>
+            <label class="opt"><input type="radio" name="q5" value="B" /> B. 광채(빛)를 바라보면 작은 문이 보인다</label>
+            <label class="opt"><input type="radio" name="q5" value="C" /> C. 태양을 바라보면 성문이 보인다</label>
+            <label class="opt"><input type="radio" name="q5" value="D" /> D. 연기를 바라보면 높은 산길이 보인다</label>
+          </div>
+          <div class="feedback" aria-live="polite"></div>
+        </fieldset>
+      </section>
+
+      <!-- Q6 -->
+      <section class="card" data-q="6" data-type="mc" data-answer="C">
+        <fieldset>
+          <legend>6) 남자가 달리며 외친 말은?</legend>
+          <div class="options" role="group" aria-label="Q6 선택지">
+            <label class="opt"><input type="radio" name="q6" value="A" /> A. 평안! 평안!</label>
+            <label class="opt"><input type="radio" name="q6" value="B" /> B. 자유! 자유!</label>
+            <label class="opt"><input type="radio" name="q6" value="C" /> C. 생명! 생명! 영원한 생명!</label>
+            <label class="opt"><input type="radio" name="q6" value="D" /> D. 진리! 진리!</label>
+          </div>
+          <div class="feedback" aria-live="polite"></div>
+        </fieldset>
+      </section>
+
+      <!-- Q7 -->
+      <section class="card" data-q="7" data-type="mc" data-answer="B">
+        <fieldset>
+          <legend>7) 뒤쫓아온 두 이웃의 올바른 짝은?</legend>
+          <div class="options" role="group" aria-label="Q7 선택지">
+            <label class="opt"><input type="radio" name="q7" value="A" /> A. 절제 / 인내</label>
+            <label class="opt"><input type="radio" name="q7" value="B" /> B. 고집쟁이 / 유순</label>
+            <label class="opt"><input type="radio" name="q7" value="C" /> C. 의심 / 두려움</label>
+            <label class="opt"><input type="radio" name="q7" value="D" /> D. 슬기 / 용기</label>
+          </div>
+          <div class="feedback" aria-live="polite"></div>
+        </fieldset>
+      </section>
+
+      <!-- Q8 -->
+      <section class="card" data-q="8" data-type="mc" data-answer="B">
+        <fieldset>
+          <legend>8) 둘이 빠진 수렁의 이름은?</legend>
+          <div class="options" role="group" aria-label="Q8 선택지">
+            <label class="opt"><input type="radio" name="q8" value="A" /> A. 소망</label>
+            <label class="opt"><input type="radio" name="q8" value="B" /> B. 절망</label>
+            <label class="opt"><input type="radio" name="q8" value="C" /> C. 의심</label>
+            <label class="opt"><input type="radio" name="q8" value="D" /> D. 분노</label>
+          </div>
+          <div class="feedback" aria-live="polite"></div>
+        </fieldset>
+      </section>
+
+      <!-- Q9 -->
+      <section class="card" data-q="9" data-type="mc" data-answer="O">
+        <fieldset>
+          <legend>9) 도움이라는 사람이 크리스천을 수렁에서 건져 올렸다. (정답 하나)</legend>
+          <div class="options" role="group" aria-label="Q9 선택지">
+            <label class="opt"><input type="radio" name="q9" value="O" /> O</label>
+            <label class="opt"><input type="radio" name="q9" value="X" /> X</label>
+          </div>
+          <div class="feedback" aria-live="polite"></div>
+        </fieldset>
+      </section>
+
+      <!-- Q10 -->
+      <section class="card" data-q="10" data-type="mc" data-answer="C">
+        <fieldset>
+          <legend>10) 끝까지 길을 가려는 태도를 보인 인물은 누구인가요?</legend>
+          <div class="options" role="group" aria-label="Q10 선택지">
+            <label class="opt"><input type="radio" name="q10" value="A" /> A. 고집쟁이</label>
+            <label class="opt"><input type="radio" name="q10" value="B" /> B. 유순</label>
+            <label class="opt"><input type="radio" name="q10" value="C" /> C. 크리스천</label>
+            <label class="opt"><input type="radio" name="q10" value="D" /> D. 도움</label>
+          </div>
+          <div class="feedback" aria-live="polite"></div>
+        </fieldset>
+      </section>
+
+      <!-- Controls -->
+      <div class="card">
+        <div class="controls">
+          <button type="button" class="primary" id="submitBtn">제출 및 채점</button>
+          <button type="button" class="soft" id="resetBtn">초기화</button>
+        </div>
+        <div id="result" class="score" role="status" aria-live="polite" hidden></div>
+      </div>
+    </form>
+  </main>
+
+<script>
+(function(){
+  const form = document.getElementById('quiz');
+  const submitBtn = document.getElementById('submitBtn');
+  const resetBtn = document.getElementById('resetBtn');
+  const resultEl = document.getElementById('result');
+  const STORAGE_KEY = 'quiz_mc_20250913';
+
+  // 라디오그룹 판별(모바일 브라우저 호환)
+  function isRadioGroup(el){
+    return !!(el && typeof el.length === 'number' && el[0] && el[0].type === 'radio');
+  }
+
+  // 로드
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    if(saved && typeof saved === 'object'){
+      Object.entries(saved).forEach(([k,v])=>{
+        const el = form.elements[k];
+        if(!el) return;
+        if(isRadioGroup(el)){
+          Array.from(el).forEach(r=>{ r.checked = (r.value===v); });
+        }else{
+          el.value = v;
+        }
+      });
+    }
+  } catch(e){ /* 무시 */ }
+
+  // 저장
+  form.addEventListener('input', ()=>{
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(getFormData()));
+  });
+
+  function getFormData(){
+    const data = {};
+    Array.from(form.elements).forEach(el=>{
+      if(!el.name) return;
+      if(el.type === 'radio'){
+        if(el.checked) data[el.name] = el.value;
+      }else if(el.type === 'text'){
+        data[el.name] = el.value.trim();
+      }
+    });
+    return data;
+  }
+
+  function setFeedback(card, ok, correctText){
+    const fb = card.querySelector('.feedback');
+    if(!fb) return;
+    fb.className = 'feedback ' + (ok ? 'ok' : 'bad');
+    fb.innerHTML = ok
+      ? `<span class="oktxt">정답!</span>`
+      : `<span class="badtxt">오답</span>${correctText ? ` · 정답: ${correctText}` : ''}`;
+  }
+
+  function grade(){
+    const nick = (form.elements['nick']?.value || '').trim();
+    if(!nick){
+      alert('닉네임을 입력해 주세요.');
+      form.elements['nick'].focus();
+      return;
+    }
+
+    let score = 0, total = 10;
+
+    // 각 문항 채점
+    document.querySelectorAll('section.card[data-q]').forEach(card=>{
+      const q = card.dataset.q;
+      const ans = card.dataset.answer;
+      const name = 'q'+q;
+      const node = form.elements[name];
+      const val = (node && (isRadioGroup(node) ? (Array.from(node).find(r=>r.checked)?.value || '') : node.value)) || '';
+      const ok = val === ans;
+      if(ok) score++;
+
+      // 정답 텍스트 표시
+      let correctText = '';
+      const label = card.querySelector(`input[name="${name}"][value="${ans}"]`)?.parentElement;
+      if(label){ correctText = label.textContent.trim(); }
+
+      setFeedback(card, ok, correctText);
+    });
+
+    resultEl.hidden = false;
+    const pct = Math.round((score/total)*100);
+    resultEl.textContent = `${nick}님의 점수: ${score}/${total} (${pct}%)`;
+
+    // 저장
+    const data = getFormData();
+    data.__lastScore = { nick, score, total, pct, at: new Date().toISOString() };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  submitBtn.addEventListener('click', grade);
+
+  resetBtn.addEventListener('click', ()=>{
+    if(!confirm('모든 답안과 닉네임을 지울까요?')) return;
+    form.reset();
+    localStorage.removeItem(STORAGE_KEY);
+    document.querySelectorAll('.feedback').forEach(f=>{
+      f.className='feedback'; f.textContent='';
+    });
+    resultEl.hidden = true; resultEl.textContent='';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+</script>
+</body>
+</html>
